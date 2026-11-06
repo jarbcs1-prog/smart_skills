@@ -9,22 +9,22 @@ metadata:
     tags:
       - portfolio
       - commercialization
-related_skills:
+    related_skills:
       - product-manager
       - business-strategist
 ---
 
 # Portfolio Commercialization
 
-Class-level skill for systematic commercialization of an AI/agent software product portfolio through an 8-phase sequence with staged approval gates, read-only discovery, claim tagging and per-product milestone execution.
+Class-level skill for systematic commercialization of software products portfolio by AI agents through an 8-phase sequence with staged approval gates, read-only discovery, claim tagging and per-product milestone execution.
 
 ## When to use
 - Beginning any portfolio commercialization engagement
-- Re-ordering or re-prioritizing products in the portfolio
+- Re-ordering or re-prioritizing products in existing portfolios
 - Auditing whether a phase or action is approved or still gated
 
 ## Communication & delivery style
-- Reply concisly: match length to the weight of the ask, no filler, no restating the request.
+- Reply concisely: match length to the weight of the ask, no filler, no restating the request.
 - Lead with the action or answer, then the evidence, then any remaining items.
 - Evidence first (real tool output, cited file paths), then deliverable, never a description of what was done.
 - Tag every claim: VERIFIED/INFERRED/ASSUMED/UNKNOWN (see references/claim-tagging.md).
@@ -36,9 +36,9 @@ Class-level skill for systematic commercialization of an AI/agent software produ
 
 ## Procedure -- 8-phase sequence
 
-Phase 1 -- Discovery (read-only): scan authorized roots; produce PORTFOLIO_MASTER_INDEX.md, APPLICATION_INVENTORY.csv, PROJECT_RELATIONSHIPS.md, DISCOVERY_GAPS.md, DISCOVERY_REPORT.md; classify products; flag readiness.
+Phase 1 -- Discovery (read-only): scan authorized roots; produce PORTFOLIO_MASTER_INDEX.md, APPLICATION_INVENTORY.csv, PROJECT_RELATIONSHIPS.md, DISCOVERY_GAPS.md, DISCOVERY_REPORT.md; classify found products; flag readiness.
 
-Phase 2 -- Assessment: products dossiers, PRODUCT_CATALOG.md, PRODUCT_ASSESSMENTS.md (taxonomy), PRODUCT_IDENTITY_REGISTER.md, PRODUCT_INTEROP_REGISTER.md.
+Phase 2 -- Assessment: product dossiers, PRODUCT_CATALOG.md, PRODUCT_ASSESSMENTS.md (taxonomy), PRODUCT_IDENTITY_REGISTER.md, PRODUCT_INTEROP_REGISTER.md.
 
 Phase 3 -- Market research & prioritization: PRODUCT_PRIORITY_MATRIX.md, COMMERCIALIZATION_ROADMAP.md, PRODUCT_POSITIONING.md, REVENUE_MODEL_PROPOSALS.md, GO_TO_MARKET_STRATEGY.md.
 
@@ -52,6 +52,13 @@ Phase 7 -- Sales/monetization: PRICING_AND_MONETIZATION_PLAN.md, REVENUE_MODEL.m
 
 Phase 8 -- Launch/operations: LAUNCH_PLAN.md, OPERATIONS_RUNBOOK.md, SUPPORT_AND_CUSTOMER_SERVICE.md, MONITORING_AND_ANALYTICS.md, INCIDENT_RESPONSE_PLAN.md, CONTINUOUS_IMPROVEMENT_FRAMEWORK.md, PRODUCT_ROADMAP.md, FINAL_PORTFOLIO_SUMMARY.md.
 
+**Stage 8 deployment procedure (per product):**
+- **Clone into temp dir, add `index.html`, commit, push to main.**
+   [NOTE if push fails with GH007: set a public email on GitHub (Settings → Emails) or amend with `git commit --amend --no-edit` + `git push -f` — confirm with user first]
+- Enable GitHub Pages via API: `curl -X PUT -H "Authorization: token <PAT>" -d '{"source":{"branch":"main","path":"/"}}' https://api.github.com/repos/<owner>/<repo>/pages`
+- Enable GitHub Pages via API: `curl -X PUT -H "Authorization: token <PAT>" -d '{"source":{"branch":"main","path":"/"}}' https://api.github.com/repos/<owner>/<repo>/pages`
+- Verify: `curl -s -o /dev/null -w "%{http_code}" https://<owner>.github.io/<repo>/` (expect `200`; GitHub Pages rebuilds in 30-60s).
+
 ## Product-by-product execution (after portfolio phases)
 Execute in priority order; for each product, produce (a) legal/compliance review, (b) pricing/packaging, (c) demo + case-study template + landing page + pilot-outreach pack. Stop after each product for review. All pricing is a working hypothesis until WTP is validated with live buyers.
 
@@ -59,7 +66,17 @@ Execute in priority order; for each product, produce (a) legal/compliance review
 - The write_file tool refuses to overwrite a file that was read with offset/limit pagination (a partial view). For edits: use patch for targeted changes or re-read the file fully before overwriting. Do not loop on the same overwrite -- switch to patch or full re-read.
 - Never modify application directories without explicit user approval. Only created workspace subfolders.
 
+## Standing rules (always apply)
+1. **No domains/hosting spend**: free GitHub Pages only (static hosting, no domain cost).
+2. **No ad spend beyond $10-12 USD** (e.g. Facebook Ads).
+3. **No Twitter/Reddit/Discord accounts** or campaigns if no existing accounts.
+4. **All UI in English by default**.
+5. **Email privacy (GH007)**: do not force-push commits with non-public emails without explicit user confirmation.
+6. **Verify deployment** with HTTP status check after enabling GitHub Pages.
+7. **Credentials never printed**; use [REDACTED].
+
 ## Pitfalls
+- **GitHub Pages API returns 404 for some repos** even when the same API works for others. If the API returns 404, flag to the user and suggest manual enablement (Settings → Pages).
 - The write_file stale-write guard: when a file was only partially read (offset/limit), write_file refuses. Use patch or a full re-read first; do not blindly retry the same overwrite.
 - Pricing/tiers are hypotheses until WTP is validated live; never publish them as final or accept payments against them.
 - Tag every claim (VERIFIED/INFERRED/ASSUMED/UNKNOWN). VERIFIED = source-backed in this session; INFERRED = corroborated but not directly observed; ASSUMED = conventional hypothesis; UNKNOWN = not yet determined.

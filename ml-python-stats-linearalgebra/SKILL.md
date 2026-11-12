@@ -1,12 +1,30 @@
 ---
 name: ml-python-stats-linearalgebra
-description: "Data-science engineering skill (ML + Python + Statistics + Linear Algebra): model selection, bias-variance, evaluation, NumPy/Pandas/scikit-learn patterns, hypothesis tests, regression, PCA/SVD. Use for ML pipelines, Python data code, statistical testing and linear algebra operations. Triggers: machine learning, ML, model, scikit-learn, pandas, numpy, statistics, hypothesis test, regression, PCA, SVD, eigen, python data."
+description: "Data-science engineering skill (ML, Python, Statistics, Linear Algebra). Use for ML pipelines, Python data code, statistical testing and linear algebra operations. Triggers: machine learning, ML, model, scikit-learn, pandas, numpy, statistics, hypothesis test, regression, PCA, SVD, eigen, python data."
 ---
 
 # ML, Python, Statistics & Linear Algebra
 
+# Evidence & verification (prerequisite)
+
+Before deriving any conclusion or taking any action from this skill, tag every claim with one of:
+
+- OBSERVED - directly heard, seen or recorded
+- VERIFIED - independently confirmed via an authorized source
+- INFERRED - reasonable conclusion based on available evidence
+- HYPOTHESIZED - possible explanation requiring investigation
+- UNKNOWN - not established
+- CONTRADICTED - conflicts with reliable evidence
+
+Definitions and worked examples: `../evidence-classification.md`.
+Verification hierarchy (the order in which to confirm claims): `../verification-hierarchy.md`.
+No unverified claim is ever a silent fact; a hypothesis is never promoted to a fact without independent confirmation.
+
 ## Core Philosophy
 This skill is not a textbook; it is a **decision aid for practitioners**. The agent already knows basic concepts; the value is in **model selection, evaluation discipline, idiomatic code patterns and avoiding the failure modes** (leakage, wrong metric, p-hacking) that textbooks mention but don't operationalize.
+
+## Context boundary (new)
+This skill is the analytical infrastructure behind the agent, not the real-time conversational layer. Its outputs (fraud-pattern analysis, anomaly detection, classification, evaluation of detection approaches, historical data analysis) inform decisions made by the defensive/verification layer; they do not replace conversational judgment. Do not use this skill to answer a live caller's question; use it to analyze data, evaluate patterns and support the verification layer's conclusions.
 
 ## Core Formula
 > **Engineering Value = (right model chosen) + (right metric) + (no leakage) + (idiomatic code) + (correct test)**
@@ -86,6 +104,63 @@ Workflow: task -> leakage check -> baseline -> train/CV -> evaluate -> assumptio
 - **Multicollinearity:** high VIF; use Ridge or drop redundant features.
 - **Numerical instability:** avoid direct inverse; use SVD or solve.
 
+
+
+## Core Reasoning Models
+
+1. **Model selection.** Start with the problem type (classification, regression, clustering, dimensionality reduction), then consider data size, interpretability needs and compute budget.
+2. **Bias-variance tradeoff.** High bias → underfitting; high variance → overfitting. The goal is the sweet spot.
+3. **Evaluation metrics.** Accuracy alone is misleading with imbalanced classes; use precision, recall, F1, ROC-AUC, confusion matrix.
+4. **Statistical testing.** Hypothesis tests compare evidence against a null model; p-values measure compatibility, not probability of truth.
+5. **Linear algebra primitives.** PCA/SVD/matrix ops are the engine of most ML; understand dimensions, rank and orthogonality.
+6. **Data leakage.** Train and test on the same distribution; future data leaks into training; scale fit on train only.
+7. **Cross-validation.** k-fold CV gives a more robust estimate of generalization than a single train/test split.
+
+## Thinking Patterns (Mindset)
+
+- **Before selecting a model, ask:** "What's the problem type and data size?"
+- **Before fitting, ask:** "Am I leaking data from the test set?"
+- **Before reporting accuracy, ask:** "Is the class balance healthy?"
+- **Before interpreting p-values, ask:** "Is the effect size practically meaningful?"
+- **Before applying PCA, ask:** "Do I understand the variance structure?"
+- **Before deploying, ask:** "Has this been evaluated on out-of-distribution data?"
+- **Before concluding, ask:** "Is this a train/test distribution mismatch?"
+- **Before acting, ask:** "Have I checked the reference point for loss aversion?"
+- **Before choosing, ask:** "Is this a gain or loss frame?"
+- **Before concluding, ask:** "Is this a overfitting or underfitting scenario?"
+- **Before reporting, ask:** "Is this a train/test mismatch or a generalization issue?"
+
+
+## Core Reasoning Models (cont.)
+
+1. **Model selection.** Start with the problem type (classification, regression, clustering, dimensionality reduction), then consider data size, interpretability needs and compute budget.
+2. **Bias-variance tradeoff.** High bias → underfitting; high variance → overfitting. The goal is the sweet spot.
+3. **Evaluation metrics.** Accuracy alone is misleading with imbalanced classes; use precision, recall, F1, ROC-AUC, confusion matrix.
+4. **Statistical testing.** Hypothesis tests compare evidence against a null model; p-values measure compatibility, not probability of truth.
+5. **Linear algebra primitives.** PCA/SVD/matrix ops are the engine of most ML; understand dimensions, rank and orthogonality.
+6. **Data leakage.** Train and test on the same distribution; future data leaks into training; scale fit on train only.
+7. **Cross-validation.** k-fold CV gives a more robust estimate of generalization than a single train/test split.
+8. **Feature engineering.** Create meaningful features; the right feature can outperform complex models.
+9. **Model interpretability.** Use SHAP, LIME or feature importance to explain predictions.
+10. **Deployment considerations.** Monitor for data drift; retrain on new data.
+
+## Thinking Patterns (Mindset) (cont.)
+
+- **Before selecting a model, ask:** "What's the problem type and data size?"
+- **Before fitting, ask:** "Am I leaking data from the test set?"
+- **Before reporting accuracy, ask:** "Is the class balance healthy?"
+- **Before interpreting p-values, ask:** "Is the effect size practically meaningful?"
+- **Before applying PCA, ask:** "Do I understand the variance structure?"
+- **Before deploying, ask:** "Has this been evaluated on out-of-distribution data?"
+- **Before concluding, ask:** "Is this a train/test distribution mismatch?"
+- **Before acting, ask:** "Have I checked the reference point for loss aversion?"
+- **Before choosing, ask:** "Is this a gain or loss frame?"
+- **Before concluding, ask:** "Is this a overfitting or underfitting scenario?"
+- **Before reporting, ask:** "Is this a train/test mismatch or a generalization issue?"
+- **Before acting, ask:** "Have I checked for data leakage?"
+- **Before concluding, ask:** "Is this a small sample or a large sample issue?"
+- **Before acting, ask:** "Have I checked the class imbalance?"
+- **Before concluding, ask:** "Is this a cross-validation or holdout issue?"
 ## Anti-Patterns (NEVER)
 - **NEVER leak test data into training** because fit transformers on train only; leakage invalidates all metrics and gives false confidence.
 - **NEVER use accuracy on imbalanced data** because it's misleading; use F1, AUC or PR-AUC; a 99% majority class gives 99% accuracy by guessing.
@@ -107,6 +182,26 @@ Risks: <leakage/imbalance/small-n/etc.>
 Next step: <concrete action>
 ```
 
+
+## Core Reasoning Models
+
+1. **Model selection.** Start with the problem type (classification, regression, clustering, dimensionality reduction), then consider data size, interpretability needs and compute budget.
+2. **Bias-variance tradeoff.** High bias → underfitting; high variance → overfitting. The goal is the sweet spot.
+3. **Evaluation metrics.** Accuracy alone is misleading with imbalanced classes; use precision, recall, F1, ROC-AUC, confusion matrix.
+4. **Statistical testing.** Hypothesis tests compare evidence against a null model; p-values measure compatibility, not probability of truth.
+5. **Linear algebra primitives.** PCA/SVD/matrix ops are the engine of most ML; understand dimensions, rank and orthogonality.
+6. **Data leakage.** Train and test on the same distribution; future data leaks into training; scale fit on train only.
+7. **Cross-validation.** k-fold CV gives a more robust estimate of generalization than a single train/test split.
+
+## Thinking Patterns (Mindset)
+
+- **Before selecting a model, ask:** "What's the problem type and data size?"
+- **Before fitting, ask:** "Am I leaking data from the test set?"
+- **Before reporting accuracy, ask:** "Is the class balance healthy?"
+- **Before interpreting p-values, ask:** "Is the effect size practically meaningful?"
+- **Before applying PCA, ask:** "Do I understand the variance structure?"
+- **Before deploying, ask:** "Has this been evaluated on out-of-distribution data?"
+- **Before concluding, ask:** "Is this a train/test distribution mismatch?"
 ## Voice Calibration
 Technical, precise, code-oriented. Favors concrete examples and runnable snippets. No hand-waving.
 ---

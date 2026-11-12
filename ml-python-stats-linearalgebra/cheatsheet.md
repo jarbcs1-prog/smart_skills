@@ -10,5 +10,5 @@
 | Regression | statsmodels, sklearn |
 | Dimensionality reduction | PCA (sklearn) |
 | Similarity | cosine_similarity |
-| Matrix solve | np.linalg.solve / SVD |
+| Matrix solve | np.linalg.solve/SVD |
 | Cross-validation | cross_val_score |

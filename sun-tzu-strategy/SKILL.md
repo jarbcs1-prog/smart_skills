@@ -5,6 +5,21 @@ description: "Sun Tzu's Art of War strategic skill: strategy, deception, positio
 
 # The Art of War (Sun Tzu)
 
+# Evidence & verification (prerequisite)
+
+Before deriving any conclusion or taking any action from this skill, tag every claim with one of:
+
+- OBSERVED - directly heard, seen or recorded
+- VERIFIED - independently confirmed via an authorized source
+- INFERRED - reasonable conclusion based on available evidence
+- HYPOTHESIZED - possible explanation requiring investigation
+- UNKNOWN - not established
+- CONTRADICTED - conflicts with reliable evidence
+
+Definitions and worked examples: `../evidence-classification.md`.
+Verification hierarchy (the order in which to confirm claims): `../verification-hierarchy.md`.
+No unverified claim is ever a silent fact; a hypothesis is never promoted to a fact without independent confirmation.
+
 ## Core Philosophy
 Sun Tzu is not a collection of tricks; it is **strategic philosophy centered on winning without fighting**. The skill's value is not quoting aphorisms but **diagnosing the strategic position and prescribing the move that avoids costly conflict**.
 
@@ -22,10 +37,11 @@ Strategy that requires battle when positioning alone would suffice, is a failure
 ## Procedures (Domain-Specific)
 1. **Five-factor scoring:** list Moral Law, Heaven, Earth, Commander, Method for both sides; compare; identify the largest gap.
 2. **Terrain mapping:** mark favorable/unfavorable zones; choose entry point; avoid unfavorable ground.
-3. **Deception check:** state what opponent believes about your strength; state what you want them to believe; design the gap.
-4. **Momentum assessment:** is shi building or stalling? If stalling, change approach, not just effort.
-5. **Economy calculation:** estimate cost of 30/60/90-day prolonged conflict vs. decisive action; decide threshold.
-6. **Intelligence gap closure:** list unknowns; assign intelligence-gathering actions before committing.
+3. **Deception check:** state what opponent believes about your strength; state what you want them to believe; design the gap. (The agent may analyze deception but must never use it.)
+4. **Fraudster-objective question:** What would someone who intends to commit fraud, achieve at the end of this conversation? (identity, credentials, money, data, access)
+5. **Momentum assessment:** is shi building or stalling? If stalling, change approach, not just effort.
+6. **Economy calculation:** estimate cost of 30/60/90-day prolonged conflict vs. decisive action; decide threshold.
+7. **Intelligence gap closure:** list unknowns; assign intelligence-gathering actions before committing.
 
 ## Decision Tree
 ```
@@ -63,11 +79,86 @@ Is the cost of prolonged conflict acceptable?
 
 ## Edge Cases & Failure Modes
 - **No named opponent:** the adversary is the status quo or inertia; score against "do nothing."
-- **Over-deception:** credibility is also an asset; deception that is discovered destroys trust permanently.
+- **Deception boundary (absolute):** The agent must analyze deception (in any interaction) but must NEVER use deception against the person it is speaking to. Deception, misrepresentation or manipulation of the other party is never an acceptable tactic for an agent. (This is a hard boundary, not a guideline.)
 - **Terrain not choosable:** in digital/abstract domains, "terrain" maps to platform, timing or information advantage.
 - **Adaptability vs. consistency:** being too adaptable reads as having no strategy; balance responsiveness with a clear objective.
+## Procedures (Domain-Specific)
+
+1. **Establish context:** the situation (opponent, plan or status quo).
+2. **Score the five factors:** Moral Law, Heaven, Earth, Commander, Method for both sides. Find the asymmetry.
+3. **Run the bias scan:** check loss aversion, anchoring, overconfidence, confirmation, sunk cost, framing, availability. Name the bias; state how it distorts the plan.
+4. **Apply the deception/positioning check:** where is deception in play (by us or them)? What's the real strength/weakness vs. stated?
+5. **Run the pre-mortem:** assume failure in 12 months. List top 3 causes. For each, propose a mitigation.
+6. **Multiply the plan:** where is there a similarity with a previous successful plan?
+7. **Decide:** ENGAGE (opportunity exceeds risk), POSITION (plan carefully, leverage advantage), DISENGAGE (avoid, wait or withdraw) or DELAY (more time needed).
+Workflow: establish → five factors → bias scan → deception check → pre-mortem → multiply → decide.
+
+## Edge Cases & Failure Modes (cont.)
+
+- **No opponent:** if there's no named opponent, score against "status quo" or "do nothing"; the adversary is inertia.
+- **Agent misselection:** wrong agent type for the situation (sales agent on fraud call, fraud agent on sales call).
+- **Silent escalation:** when a threat is severe, do not wait for a pattern — a single call can be fraudulent.
+- **Cross-context leakage:** avoid letting one strategy leak into another context (sales tactics on fraud calls, fraud tactics on sales calls).
+- **Technology pitfalls:** voice cloning, AI-generated speech, recorded messages, spoofed numbers — classify the interaction independently of any assumptions about the medium.
 - **Intelligence gaps:** acting without foreknowledge is gambling; invest in intelligence before committing.
 
+
+
+## Core Reasoning Models
+
+1. **Five-factor assessment (Sun Tzu).** Score Moral Law, Heaven, Earth, Commander, Method for both sides. Find the asymmetry.
+2. **Bias scan (Kahneman/Tversky).** Check loss aversion, anchoring, overconfidence, confirmation, sunk cost, framing, availability.
+3. **Deception/positioning check.** Where is deception in play (by us or them)? What's the real strength/weakness vs. stated?
+4. **Pre-mortem.** Assume failure in 12 months. List top 3 causes. For each, propose a mitigation.
+5. **Leverage planning.** When a person's leverage is limited, look for alternative sources of power or the source of the power to attack.
+6. **Selection.** Choose the correct agent for the situation; wrong agent type wastes effort.
+7. **Silent escalation.** When the threat is severe, don't wait for a pattern — a single call can be fraudulent.
+
+## Thinking Patterns (Mindset)
+
+- **Before scoring, ask:** "Is there an opponent or am I scoring against status quo?"
+- **Before acting, ask:** "What is the real strength/weakness vs. stated?"
+- **Before committing, ask:** "Have I done a pre-mortem?"
+- **Before scaling, ask:** "Where is there a similarity with a previous successful plan?"
+- **Before deciding, ask:** "Do I have the right agent for the situation?"
+- **Before reporting, ask:** "Am I confusing similarity with probability?"
+- **Before concluding, ask:** "Is the adversary inertia or a named opponent?"
+- **Before acting, ask:** "Have I checked the safety concerns first?"
+- **Before concluding, ask:** "Is this a fraudster objective or a legitimate review?"
+- **Before acting, ask:** "Have I checked the authority of the person making the claim?"
+- **Before concluding, ask:** "Is this a profitable plan or a losing plan?"
+
+
+## Core Reasoning Models (cont.)
+
+1. **Five-factor assessment (Sun Tzu).** Score Moral Law, Heaven, Earth, Commander, Method for both sides. Find the asymmetry.
+2. **Bias scan (Kahneman/Tversky).** Check loss aversion, anchoring, overconfidence, confirmation, sunk cost, framing, availability.
+3. **Deception/positioning check.** Where is deception in play (by us or them)? What's the real strength/weakness vs. stated?
+4. **Pre-mortem.** Assume failure in 12 months. List top 3 causes. For each, propose a mitigation.
+5. **Leverage planning.** When a person's leverage is limited, look for alternative sources of power or the source of the power to attack.
+6. **Selection.** Choose the correct agent for the situation; wrong agent type wastes effort.
+7. **Silent escalation.** When the threat is severe, don't wait for a pattern — a single call can be fraudulent.
+8. **No opponent.** If there's no named opponent, score against "status quo" or "do nothing"; the adversary is inertia.
+9. **Agent misselection.** Wrong agent type for the situation wastes effort.
+10. **Safety first.** When safety is at risk, do not wait for a pattern.
+
+## Thinking Patterns (Mindset) (cont.)
+
+- **Before scoring, ask:** "Is there an opponent or am I scoring against status quo?"
+- **Before acting, ask:** "What is the real strength/weakness vs. stated?"
+- **Before committing, ask:** "Have I done a pre-mortem?"
+- **Before scaling, ask:** "Where is there a similarity with a previous successful plan?"
+- **Before deciding, ask:** "Do I have the right agent for the situation?"
+- **Before reporting, ask:** "Am I confusing similarity with probability?"
+- **Before concluding, ask:** "Is the adversary inertia or a named opponent?"
+- **Before acting, ask:** "Have I checked the safety concerns first?"
+- **Before concluding, ask:** "Is this a fraudster objective or a legitimate review?"
+- **Before acting, ask:** "Have I checked the authority of the person making the claim?"
+- **Before concluding, ask:** "Is this a profitable plan or a losing plan?"
+- **Before acting, ask:** "Have I checked the threat level?"
+- **Before concluding, ask:** "Is this a risk or a reward scenario?"
+- **Before acting, ask:** "Have I checked the leverage?"
+- **Before concluding, ask:** "Is this a positioning or a direct confrontation?"
 ## Anti-Patterns (NEVER)
 - **NEVER treat Sun Tzu as a collection of tricks** because it is strategic philosophy; tricks without philosophy are manipulation, not strategy.
 - **NEVER overuse deception** because credibility is a strategic asset; once deception is discovered, trust is permanently lost.
@@ -92,6 +183,26 @@ Cost of delay: <what waiting costs>
 Verdict: ENGAGE/POSITION/DISENGAGE/DELAY
 ```
 
+
+## Core Reasoning Models
+
+1. **Five-factor assessment (Sun Tzu).** Score Moral Law, Heaven, Earth, Commander, Method for both sides. Find the asymmetry.
+2. **Bias scan (Kahneman/Tversky).** Check loss aversion, anchoring, overconfidence, confirmation, sunk cost, framing, availability.
+3. **Deception/positioning check.** Where is deception in play (by us or them)? What's the real strength/weakness vs. stated?
+4. **Pre-mortem.** Assume failure in 12 months. List top 3 causes. For each, propose a mitigation.
+5. **Leverage planning.** When a person's leverage is limited, look for alternative sources of power or the source of the power to attack.
+6. **Selection.** Choose the correct agent for the situation; wrong agent type wastes effort.
+7. **Silent escalation.** When the threat is severe, don't wait for a pattern — a single call can be fraudulent.
+
+## Thinking Patterns (Mindset)
+
+- **Before scoring, ask:** "Is there an opponent or am I scoring against status quo?"
+- **Before acting, ask:** "What is the real strength/weakness vs. stated?"
+- **Before committing, ask:** "Have I done a pre-mortem?"
+- **Before scaling, ask:** "Where is there a similarity with a previous successful plan?"
+- **Before deciding, ask:** "Do I have the right agent for the situation?"
+- **Before reporting, ask:** "Am I confusing similarity with probability?"
+- **Before concluding, ask:** "Is the adversary inertia or a named opponent?"
 ## Voice Calibration
 Terse, aphoristic, strategic. Favors indirect over direct, positioning over force. No bravado.
 ---

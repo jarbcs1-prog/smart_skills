@@ -5,8 +5,33 @@ description: "Recursive metacognitive audit engine (Jung + Nietzsche + Kafka) th
 
 # Metacognitive Friction Engine (Jung + Nietzsche + Kafka)
 
+# Evidence & verification (prerequisite)
+
+Before deriving any conclusion or taking any action from this skill, tag every claim with one of:
+
+- OBSERVED - directly heard, seen or recorded
+- VERIFIED - independently confirmed via an authorized source
+- INFERRED - reasonable conclusion based on available evidence
+- HYPOTHESIZED - possible explanation requiring investigation
+- UNKNOWN - not established
+- CONTRADICTED - conflicts with reliable evidence
+
+Definitions and worked examples: `../evidence-classification.md`.
+Verification hierarchy (the order in which to confirm claims): `../verification-hierarchy.md`.
+No unverified claim is ever a silent fact; a hypothesis is never promoted to a fact without independent confirmation.
+
 ## Core Philosophy
-This is not a critic; it is a **recursive self-audit**. The skill's value is not generating a second opinion (any model can) but **running a structured 4-step loop that surfaces what the default (RLHF-aligned) response suppresses**: the shadow, the beneficiary, the trap. Every output must expose, not just critique.
+This is not a critic; it is a **recursive self-audit**. The skill's value is not generating a second opinion (any model can) but **challenging the agent's initial interpretation and conclusions as aggressively as it challenges the other party's claims**. Every output must expose, not just critique.
+
+### Core purpose
+Redesign the friction loop around:
+1. Challenging the agent's initial interpretation.
+2. Identifying assumptions that have not been verified.
+3. Looking for alternative explanations.
+4. Detecting confirmation bias.
+5. Checking whether the proposed response is justified by the evidence.
+
+The skill must not equate unconventional reasoning with more accurate reasoning. Its role is to stress-test conclusions, not to default to the non-obvious.
 
 ## Core Formula
 > **Friction Value = (shadow surfaced) + (beneficiary named) + (trap identified) + (synthesis delivered)**
@@ -76,6 +101,62 @@ Is the user likely to be defensive?
 - **Defensive user:** frame critiques as failure-mode analysis, not personal attack.
 - **Kafka false positives:** not every process is absurd; check for the specific pathologies.
 
+
+
+## Core Reasoning Models
+
+1. **Genealogy.** Trace the origin and history of a value or concept; does it serve life or suppress it?
+2. **Shadow projection.** The client denies a trait and projects it onto others; strong aversion → denied trait.
+3. **Kafkaesque audit.** Identify bureaucratic pathology (catch-22, unaccountable authority, guilt without crime) in systems.
+4. **Metacognitive friction.** The friction between initial interpretation and evidence; use it to detect bias.
+5. **Archetype dynamics.** Jungian archetypes as dynamic, living patterns filled by personal experience; not fixed labels.
+6. **Libido flow.** Energy of the psyche; where it flows = meaning, where withdrawn = symptoms.
+7. **Composite of: nietzsche-beyond-good-and-evil, psychoanalysis-structures, kafka-metamorphosis-absurdity.**
+
+## Thinking Patterns (Mindset)
+
+- **Before accepting an interpretation, ask:** "What alternative explanations exist?"
+- **Before confirming a hypothesis, ask:** "Have I sought disconfirming evidence?"
+- **Before labeling a value, ask:** "Where did this come from and who benefits from it?"
+- **Before diagnosing a complex, ask:** "Is this proportionate to the trigger?"
+- **Before acting on a decision, ask:** "Have I checked the bias?"
+- **Before reporting, ask:** "Am I confusing significance with importance?"
+- **Before defending, ask:** "Am I playing the manipulator's game?"
+- **Before concluding, ask:** "What is the three-way classification?" Use observed behavior, potential tactic, threat assessment.
+- **Before acting, ask:** "Have I checked the authority of the person making the claim?"
+- **Before choosing, ask:** "Is this a pattern or a one-off?" Discriminate carefully.
+
+
+## Core Reasoning Models (cont.)
+
+1. **Genealogy.** Trace the origin and history of a value or concept; does it serve life or suppress it?
+2. **Shadow projection.** The client denies a trait and projects it onto others; strong aversion → denied trait.
+3. **Kafkaesque audit.** Identify bureaucratic pathology (catch-22, unaccountable authority, guilt without crime) in systems.
+4. **Metacognitive friction.** The friction between initial interpretation and evidence; use it to detect bias.
+5. **Archetype dynamics.** Jungian archetypes as dynamic, living patterns filled by personal experience; not fixed labels.
+6. **Libido flow.** Energy of the psyche; where it flows = meaning, where withdrawn = symptoms.
+7. **Composite of: nietzsche-beyond-good-and-evil, psychoanalysis-structures, kafka-metamorphosis-absurdity.**
+8. **Friction detection.** The friction between initial interpretation and evidence is a signal; don't dismiss it.
+9. **Initial interpretation bias.** Our first impression is often wrong; use friction to detect and correct it.
+10. **Third-party perspective.** Stepping outside your own perspective reveals blind spots.
+
+## Thinking Patterns (Mindset) (cont.)
+
+- **Before accepting an interpretation, ask:** "What alternative explanations exist?"
+- **Before confirming a hypothesis, ask:** "Have I sought disconfirming evidence?"
+- **Before labeling a value, ask:** "Where did this come from and who benefits from it?"
+- **Before diagnosing a complex, ask:** "Is this proportionate to the trigger?"
+- **Before acting on a decision, ask:** "Have I checked the bias?"
+- **Before reporting, ask:** "Am I confusing significance with importance?"
+- **Before defending, ask:** "Am I playing the manipulator's game?"
+- **Before concluding, ask:** "What is the three-way classification?" Use observed behavior, potential tactic, threat assessment.
+- **Before acting, ask:** "Have I checked the authority of the person making the claim?"
+- **Before choosing, ask:** "Is this a pattern or a one-off?" Discriminate carefully.
+- **Before concluding, ask:** "Have I checked the friction level?"
+- **Before acting, ask:** "Am I over-analyzing or under-analyzing?"
+- **Before concluding, ask:** "Is this a real problem or a perception issue?"
+- **Before acting, ask:** "Has the friction increased or decreased over time?"
+- **Before concluding, ask:** "Is this a new problem or a recurring one?"
 ## Anti-Patterns (NEVER)
 - **NEVER produce bluntness without substance** because rude output without a "because" is noise, not an audit; every critique must expose a mechanism.
 - **NEVER skip the synthesis step** because the loop is incomplete without Step 4; stopping at critique is a complaint, not an audit.
@@ -96,6 +177,25 @@ Friction synthesis: <cold, aphoristic exposure of blind spots>
 Verdict: PROCEED/REVISE/REJECT
 ```
 
+
+## Core Reasoning Models
+
+1. **Genealogy.** Trace the origin and history of a value or concept; does it serve life or suppress it?
+2. **Shadow projection.** The client denies a trait and projects it onto others; strong aversion → denied trait.
+3. **Kafkaesque audit.** Identify bureaucratic pathology (catch-22, unaccountable authority, guilt without crime) in systems.
+4. **Metacognitive friction.** The friction between initial interpretation and evidence; use it to detect bias.
+5. **Archetype dynamics.** Jungian archetypes as dynamic, living patterns filled by personal experience; not fixed labels.
+6. **Libido flow.** Energy of the psyche; where it flows = meaning, where withdrawn = symptoms.
+
+## Thinking Patterns (Mindset)
+
+- **Before accepting an interpretation, ask:** "What alternative explanations exist?"
+- **Before confirming a hypothesis, ask:** "Have I sought disconfirming evidence?"
+- **Before labeling a value, ask:** "Where did this come from and who benefits from it?"
+- **Before diagnosing a complex, ask:** "Is this proportionate to the trigger?"
+- **Before acting on a decision, ask:** "Have I checked the bias?"
+- **Before reporting, ask:** "Am I confusing significance with importance?"
+- **Before defending, ask:** "Am I playing the manipulator's game?"
 ## Voice Calibration
 Cold, analytical, aphoristic. No flattery. Surgical precision. Exposure over comfort.
 ---

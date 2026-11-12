@@ -1,8 +1,8 @@
 # Smart Skills Suite — Adversarial Interaction & Decision Intelligence
 
-**Purpose:** A corpus of 12 agent skills wired to the Skill Interface Contract (CONTRACT.md). The skills recognize fraud, manipulation, dark psychology, bureaucratic absurdity, and cognitive bias — then prescribe defensive, evidence-based responses. All skills are model-agnostic, context-agnostic, and wire to any compatible model backend via the `adapters/` normalization layer.
+**Purpose:** A corpus of 13 agent skills wired to the Skill Interface Contract (CONTRACT.md). The skills recognize fraud, manipulation, dark psychology, bureaucratic absurdity and cognitive bias — then prescribe defensive, evidence-based responses. All skills are model-agnostic, context-agnostic and wire to any compatible model backend via the `adapters/` normalization layer.
 
-**History:** Source books-based skills suite, expanded 2026-11-09 to a structured corpus of skills with progressive disclosure, MANDATORY triggers, and a coordinating layer (HITIDR).
+**History:** Source books-based skills suite, expanded 2026-11-09 to a structured corpus of skills with progressive disclosure, MANDATORY triggers and a coordinating layer (HITIDR).
 
 ---
 
@@ -83,10 +83,10 @@ Every skill in the corpus is wired to this contract:
    - DNC/consent check before any outbound action
    - AI disclosure on request (no evasive deflection)
    - No credential/payment-card/national-ID capture
-   - No unauthorised commitments (pricing, contract, timelines)
+   - No unauthorized commitments (pricing, contract, timelines)
    - Honor immediate refusal/hang-up (one clean exit)
    - Never invent facts about the recipient's business
-   - These override any script, persona, or pitch the user supplies.
+   - These override any script, persona or pitch the user supplies.
 
 3. **Router (narrowest executable procedure):**
    - A Contents table mapping each depth file to the moment it is read.
@@ -108,7 +108,7 @@ Every skill in the corpus is wired to this contract:
 ### Claim tagging (6 classes)
 | Class | Meaning |
 |-------|---------|
-| `OBSERVED` | Directly heard, seen, or recorded in this interaction |
+| `OBSERVED` | Directly heard, seen or recorded in this interaction |
 | `VERIFIED` | Independently confirmed via an authorized source |
 | `INFERRED` | Reasonable conclusion based on available evidence |
 | `HYPOTHESIZED` | Possible explanation requiring investigation |
@@ -116,23 +116,23 @@ Every skill in the corpus is wired to this contract:
 | `CONTRADICTED` | Conflicts with reliable evidence |
 
 **Rules:**
-1. A claim is `OBSERVED` when it comes from the interaction itself. A realistic voice, convincing document, spoofed caller ID, or confident delivery is NOT independent verification; the same media may be voice-cloned, AI-generated, or recorded.
-2. An unverified party's document, link, phone number, or credential is `OBSERVED` at best, and NEVER `VERIFIED` on its own.
+1. A claim is `OBSERVED` when it comes from the interaction itself. A realistic voice, convincing document, spoofed caller ID or confident delivery is NOT independent verification; the same media may be voice-cloned, AI-generated or recorded.
+2. An unverified party's document, link, phone number or credential is `OBSERVED` at best and NEVER `VERIFIED` on its own.
 3. `HYPOTHESIZED` may explain the evidence but is not evidence of its own.
 4. `CONTRADICTED` claims must not be used as support for any conclusion.
 
 ### Verification hierarchy (5 levels)
 When a claim must be confirmed, check in this order. Stop at the first independent level that verifies it:
 1. Trusted information supplied by the application's authorized runtime.
-2. Independently established official contact channels (e.g., published phone number from a directory, not supplied by the caller).
+2. Independently established official contact channels (e.g. published phone number from a directory, not supplied by the caller).
 3. Authoritative records available to the agent (logs, dataset, verified reference material).
 4. Information supplied by the person during the conversation.
-5. Documents, links, phone numbers, or credentials supplied by an unverified party. These must not be treated as verification of themselves.
+5. Documents, links, phone numbers or credentials supplied by an unverified party. These must not be treated as verification of themselves.
 
 **Notes:**
-- A convincing website, document, email address, or caller ID is not itself independent verification.
+- A convincing website, document, email address or caller ID is not itself independent verification.
 - The hierarchy is a check, not a conversation. If a claim needs verification beyond level 5, the agent must verify it or decline, not accept it.
-- Threat model: a realistic voice, AI-generated speech, recorded messages, automated impersonation, spoofed telephone numbers, synthetic documents and websites, and human operators switching between multiple identities are all possible. A convincing voice is not authentication.
+- Threat model: a realistic voice, AI-generated speech, recorded messages, automated impersonation, spoofed telephone numbers, synthetic documents and websites and human operators switching between multiple identities are all possible. A convincing voice is not authentication.
 
 ---
 
@@ -142,24 +142,24 @@ Each skill has:
 - **`SKILL.md`** — router + hard gates + narrowest executable procedure + MANDATORY triggers
 - **`references/`** or **`chapters/`** — depth files loaded only on demand
 - **`templates/`** (where present) — reusable snippets
-- **`cheatsheet.md`, `glossary.md`, `patterns.md`** (where present) — quick-reference, terminology, and concept patterns
+- **`cheatsheet.md`, `glossary.md`, `patterns.md`** (where present) — quick-reference, terminology and concept patterns
 
 ### Skill Registry
 
 | # | Skill | Description | Category | D5 / D7 / D8 |
 |---|-------|-------------|----------|--------------|
-| 1 | **cognitive-biases-decisions** | Kahneman & Tversky prospect theory + human biases diagnostic skill: heuristics, framing, loss aversion, anchoring, availability, overconfidence. Use to identify biases in decisions, debias plans, and red-team pricing, messaging, and strategies. | cognition | 14/10/13 |
-| 2 | **dark-psychology-defenses** | Defensive skill for recognizing and resisting manipulation, mind games, and coercive control (gaslighting, love bombing, triangulation, DARVO, intermittent reinforcement, isolation). Use to identify manipulation in interactions, relationships, marketing, and organizations; build boundaries and resistance. | defense | 14/10/13 |
-| 3 | **kafka-metamorphosis-absurdity** | Kafkaesque bureaucratic-absurdity diagnostic skill: opaque power structures, infinite procedural loops, individual alienation, catch-22s, unaccountable authorities, guilt without crime. Use to stress-test workflows, ToS, policies, user journeys, and organizations for invisible traps and psychological drains. | diagnosis | 14/10/12 |
-| 4 | **metacognitive-friction-engine** | Recursive metacognitive audit engine (Jung + Nietzsche + Kafka) that breaks the agent's initial interpretation, unverified assumptions, and confirmation bias. Routes to cheatsheets of source skills for third-party grounding. | cognition | 14/10/10 |
-| 5 | **ml-python-stats-linearalgebra** | Data-science engineering skill (ML, Python, Statistics, Linear Algebra): model selection, bias-variance, evaluation, NumPy/Pandas/scikit-learn patterns, hypothesis tests, regression, PCA/SVD. Use for ML pipelines, Python data code, statistical testing, and linear algebra operations. | data science | 14/10/10 |
-| 6 | **nietzsche-beyond-good-and-evil** | Nietzsche's Beyond Good and Evil compiled skill: perspectivism, genealogy of morals, will to power, master/slave morality, active nihilism, free spirits, anti-sycophancy. Use to audit values, policies, incentives, power dynamics, or for iconoclastic non-sycophantic critique. | philosophy | 14/10/10 |
+| 1 | **cognitive-biases-decisions** | Kahneman & Tversky prospect theory + human biases diagnostic skill: heuristics, framing, loss aversion, anchoring, availability, overconfidence. Use to identify biases in decisions, debias plans and red-team pricing, messaging and strategies. | cognition | 14/10/13 |
+| 2 | **dark-psychology-defenses** | Defensive skill for recognizing and resisting manipulation, mind games and coercive control (gaslighting, love bombing, triangulation, DARVO, intermittent reinforcement, isolation). Use to identify manipulation in interactions, relationships, marketing and organizations; build boundaries and resistance. | defense | 14/10/13 |
+| 3 | **kafka-metamorphosis-absurdity** | Kafkaesque bureaucratic-absurdity diagnostic skill: opaque power structures, infinite procedural loops, individual alienation, catch-22s, unaccountable authorities, guilt without crime. Use to stress-test workflows, ToS, policies, user journeys and organizations for invisible traps and psychological drains. | diagnosis | 14/10/12 |
+| 4 | **metacognitive-friction-engine** | Recursive metacognitive audit engine (Jung + Nietzsche + Kafka) that breaks the agent's initial interpretation, unverified assumptions and confirmation bias. Routes to cheatsheets of source skills for third-party grounding. | cognition | 14/10/10 |
+| 5 | **ml-python-stats-linearalgebra** | Data-science engineering skill (ML, Python, Statistics, Linear Algebra): model selection, bias-variance, evaluation, NumPy/Pandas/scikit-learn patterns, hypothesis tests, regression, PCA/SVD. Use for ML pipelines, Python data code, statistical testing and linear algebra operations. | data science | 14/10/10 |
+| 6 | **nietzsche-beyond-good-and-evil** | Nietzsche's Beyond Good and Evil compiled skill: perspectivism, genealogy of morals, will to power, master/slave morality, active nihilism, free spirits, anti-sycophancy. Use to audit values, policies, incentives, power dynamics or for iconoclastic non-sycophantic critique. | philosophy | 14/10/10 |
 | 7 | **outbound-cold-calling-voice-agent** | Outbound cold-calling voice agent: scripts, call flows, compliance rules (DNC, AI disclosure, consent, PECR/GDPR/TCPA), pitch types, techniques, live call quality rules. Use when placing outbound calls, writing sales scripts, tuning voice agent persona, handling objections, designing call flows, checking compliance. | outbound | 15/10/15 |
-| 8 | **portfolio-commercialization** | AI-agent product commercialization in 8 gated phases. Use when beginning a commercialization engagement, reordering or prioritizing products, auditing approval status of a phase, or when the user mentions portfolio strategy, product prioritization, commercialization roadmap. | strategy | 15/10/15 |
-| 9 | **psychoanalysis-structures** | Jungian psychoanalytic diagnostic skill: libido, complexes, archetypes, shadow, persona, anima/animus, individuation. Use to run shadow projection scans, identify dominant archetypes, assess libido flow, and prescribe integration paths. | psychology | 14/8/10 |
-| 10 | **sales-negotiation** | Sales and negotiation skill: rapport, qualification, methodologies (SPIN/Sandler/Challenger), pricing, objection handling, closing, negotiation, follow-up, escalation. Use for sales conversations, deal strategy, objection handling, pricing justification, and negotiation coaching. | sales | 14/10/10 |
-| 11 | **strategic-red-team** | Adversarial red-team skill combining Sun Tzu positioning, Kahneman/Tversky bias scan, and sales-negotiation lens. Use for adversarial review of plans, strategies, or products: find weaknesses, anticipate opponent moves, design fixes. | red-team | 14/10/10 |
-| 12 | **sun-tzu-strategy** | Sun Tzu's Art of War strategic skill: strategy, deception, positioning, terrain, five factors (Moral Law, Heaven, Earth, Commander, Method). Use for strategic planning, positioning, and decision-making in competitive or adversarial contexts. | strategy | 14/10/12 |
+| 8 | **portfolio-commercialization** | AI-agent product commercialization in 8 gated phases. Use when beginning a commercialization engagement, reordering or prioritizing products, auditing approval status of a phase or when the user mentions portfolio strategy, product prioritization, commercialization roadmap. | strategy | 15/10/15 |
+| 9 | **psychoanalysis-structures** | Jungian psychoanalytic diagnostic skill: libido, complexes, archetypes, shadow, persona, anima/animus, individuation. Use to run shadow projection scans, identify dominant archetypes, assess libido flow and prescribe integration paths. | psychology | 14/8/10 |
+| 10 | **sales-negotiation** | Sales and negotiation skill: rapport, qualification, methodologies (SPIN/Sandler/Challenger), pricing, objection handling, closing, negotiation, follow-up, escalation. Use for sales conversations, deal strategy, objection handling, pricing justification and negotiation coaching. | sales | 14/10/10 |
+| 11 | **strategic-red-team** | Adversarial red-team skill combining Sun Tzu positioning, Kahneman/Tversky bias scan and sales-negotiation lens. Use for adversarial review of plans, strategies or products: find weaknesses, anticipate opponent moves, design fixes. | red-team | 14/10/10 |
+| 12 | **sun-tzu-strategy** | Sun Tzu's Art of War strategic skill: strategy, deception, positioning, terrain, five factors (Moral Law, Heaven, Earth, Commander, Method). Use for strategic planning, positioning and decision-making in competitive or adversarial contexts. | strategy | 14/10/12 |
 
 ---
 
@@ -191,7 +191,7 @@ Every skill's SKILL.md contains a `## MANDATORY Triggers` section. Example:
 - **Do NOT load** all chapters for a simple term lookup; use glossary only.
 ```
 
-The router (the model invoking the skill) reads the trigger, finds the depth file, reads it, and proceeds. Depth files are never loaded by default.
+The router (the model invoking the skill) reads the trigger, finds the depth file, reads it and proceeds. Depth files are never loaded by default.
 
 ---
 
@@ -252,7 +252,7 @@ All 12 skills pass the quality gate: total score ≥ 80, D1 ≥ 11, description 
 
 ### Invoking a skill
 
-1. Identify the trigger (e.g., `bias`, `fraud`, `Kafka`, `JUNG`, `negotiation`, `portfolio`).
+1. Identify the trigger (e.g. `bias`, `fraud`, `Kafka`, `JUNG`, `negotiation`, `portfolio`).
 2. Read the `SKILL.md` for the matching skill.
 3. Follow the hard gates (always present).
 4. When the router specifies a `MANDATORY - READ` trigger, load the indicated depth file.
@@ -261,7 +261,7 @@ All 12 skills pass the quality gate: total score ≥ 80, D1 ≥ 11, description 
 ### Safety-critical context
 
 For any interaction involving real people (voice calls, chat, email, async):
-1. Apply the hard gates first (DNC check, AI disclosure, no credential capture, no unauthorised commitments, honor refusal).
+1. Apply the hard gates first (DNC check, AI disclosure, no credential capture, no unauthorized commitments, honor refusal).
 2. Use the coordinating layer (HITIDR) to identify the threat type.
 3. Route to the appropriate analytical skill for depth.
 4. Verify claims using the 5-level verification hierarchy.
